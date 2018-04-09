@@ -1,2 +1,2 @@
 # Jetson-TX2-sh
-Some sh files to setup fresh TX2
+Some sh files to setup a fresh TX2
