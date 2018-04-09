@@ -1,7 +1,7 @@
 cd $HOME
 
 # Enable all the cores of CPU
-nvpmodel -m 0
+sudo nvpmodel -m 0
 
 sudo apt-get update && sudo apt-get upgrade
 
