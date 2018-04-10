@@ -13,6 +13,7 @@ export LC_ALL=C
 # Install some necessities before restarting
 sudo apt-get install --upgrade git
 sudo apt-get install python3-pip
+sudo apt-get install --upgrade subversion
 
 # Tell user that the system will restart to let the changes take effect
 echo 'Restart the system for the changes to take effect.'
