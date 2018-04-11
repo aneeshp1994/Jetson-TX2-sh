@@ -19,6 +19,8 @@ sudo apt-get install python3-pip
 sudo apt-get install --upgrade subversion
 
 # Allow Jetson to be remotely accessible by issuing following command
+echo Note: The following command requires to be run on the local machine without the use of ssh: gsettings set org.gnome.Vino require-encryption false
+# Actual command
 gsettings set org.gnome.Vino require-encryption false
 
 # Tell user that the system will restart to let the changes take effect
