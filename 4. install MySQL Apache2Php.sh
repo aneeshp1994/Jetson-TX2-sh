@@ -9,4 +9,4 @@ sudo apt-get install --upgrade -y apache2
 # Install php
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
-sudo apt-get install --upgrade php5.6
+sudo apt-get install --upgrade -y php5.6
