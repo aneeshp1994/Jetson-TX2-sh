@@ -10,3 +10,5 @@ sudo apt-get install --upgrade -y apache2
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get install --upgrade -y php5.6
+sudo apt-get install --upgrade -y php5.6-mysqli
+
