@@ -1,0 +1,3 @@
+01. in /applications/config/config.php:
+    config['base_url'] = 'http://ip.address.of.TX2/frs/';
+
