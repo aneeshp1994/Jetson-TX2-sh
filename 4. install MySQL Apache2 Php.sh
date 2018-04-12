@@ -22,7 +22,11 @@ sudo apt-get install --upgrade -y php5.6
 sudo apt-get install --upgrade -y php5.6-mysqli
 echo 'Done.'
 
-########################### Very Important ##########################################
-# Check mysql username, password, database name in "backend/utils/databaseEntry.py"
-# Do something to prevent "Group by aggregation" error
-#####################################################################################
+# To prevent "Group by non aggregated columns allowed" error
+echo sql_mode = STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION | sudo tee --append /etc/mysql/mysql.conf.d/mysqld.cnf
+
+echo \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Very Important \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+echo Check mysql username, password, database name in "backend/utils/databaseEntry.py"
+echo \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
+echo 'Finished.'
