@@ -1,12 +1,21 @@
 # Install the necessities using pip
-pip install --upgrade pip
+echo 'Upgrading python3-pip...'
+sudo -H pip3 install --upgrade pip
+echo 'Done.'
 
-pip install --upgrade numpy
+echo 'Installing numpy...'
+sudo -H pip3 install --upgrade numpy
+echo 'Done.'
 
+echo 'Installing dependencies for scipy...'
 sudo apt-get install libatlas-base-dev gfortran
+echo 'Done.'
 
-pip install --upgrade scipy
+echo 'Installing scipy...'
+sudo -H pip3 install --upgrade scipy
+echo 'Done.'
 
+echo 'Installing necessities for opencv-python...'
 sudo apt-get install --upgrade -y \
     libglew-dev \
     libtiff5-dev \
@@ -23,7 +32,13 @@ sudo apt-get install --upgrade -y \
     libtbb-dev \
     libgtk2.0-dev \
     cmake \
+    python3-dev \
+    python3-py \
+    python3-pytest
+    libgstreamer1.0-dev \
+    libgstreamer-plugins-base1.0-dev
     pkg-config
+echo 'Done.'
 
 cd $HOME
 
@@ -32,12 +47,14 @@ mkdir work
 cd work
 
 # Clone the git repository of opencv and opencv-contrib
+echo 'Cloning the opencv and opencv_contrib from git...'
 git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
+echo 'Done.'
 
-sudo apt-get install --upgrade -y python3-dev python3-py python3-pytest
+#sudo apt-get install --upgrade -y python3-dev python3-py python3-pytest
 
-sudo apt-get install --upgrade -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+#sudo apt-get install --upgrade -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 
 cd opencv
 
@@ -45,6 +62,7 @@ mkdir build
 
 cd build
 
+echo 'Building opencv...'
 cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
@@ -77,9 +95,13 @@ cmake \
     -DINSTALL_TESTS=OFF \
     -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
 ../
+echo 'Done.'
 
 # Make and install opencv
+echo 'Completing the making of opencv...'
 make -j6
+echo 'Done.'
 
+echo 'Installing opencv...'
 sudo make install
-
+echo 'Done.'

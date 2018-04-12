@@ -1,4 +1,5 @@
 # Install the prerequisites
+echo 'Installing dependencies for dlib...'
 sudo apt-get install --upgrade -y --fix-missing \
     build-essential \
     cmake \
@@ -20,14 +21,18 @@ sudo apt-get install --upgrade -y --fix-missing \
     python3-numpy \
     software-properties-common \
     zip \
+echo 'Done.'
 
 cd $HOME/work
 
 # Install from git repository
+echo 'Cloning github repository from github...'
 git clone https://github.com/davisking/dlib.git
+echo 'Done.'
 
 cd dlib
 
 # Install dlib for python only
+echo 'Installing dlib for python...'
 sudo python3 setup.py install --yes USE_AVX_INSTRUCTIONS --yes DLIB_USE_CUDA
-
+echo 'Done.'
