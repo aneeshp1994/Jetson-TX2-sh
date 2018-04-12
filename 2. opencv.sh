@@ -8,7 +8,7 @@ sudo -H pip3 install --upgrade numpy
 echo 'Done.'
 
 echo 'Installing dependencies for scipy...'
-sudo apt-get install libatlas-base-dev gfortran
+sudo apt-get install --upgrade -y libatlas-base-dev gfortran
 echo 'Done.'
 
 echo 'Installing scipy...'

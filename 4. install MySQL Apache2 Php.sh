@@ -6,7 +6,7 @@ echo 'Installing mysql...'
 sudo apt-get install --upgrade -y mysql-server
 echo 'Done.'
 echo 'Installing mysqldb for python3...'
-sudo apt-get install --upgrade python3-mysqldb
+sudo apt-get install --upgrade -y python3-mysqldb
 echo 'Done.'
 
 # Install apache2
