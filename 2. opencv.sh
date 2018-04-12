@@ -1,5 +1,5 @@
 # Install the necessities using pip
-echo 'Upgrading python3-pip...'
+echo 'Upgrading python3-pip to latest version...'
 sudo -H pip3 install --upgrade pip
 echo 'Done.'
 
