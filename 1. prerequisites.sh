@@ -7,6 +7,10 @@ echo 'Performing update and upgrade to get all softwares up to date...'
 sudo apt-get update && sudo apt-get upgrade
 echo 'Done.'
 
+# Install mlocate to use the command locate
+echo 'Installing mlocate...'
+sudo apt-get install --upgrade -y mlocate
+
 # Add aliases to pip3.5 and python3.5
 echo alias pip=\”sudo -H pip3\” >> .bashrc
 echo alias python=\”python3\” >> .bashrc
@@ -17,13 +21,13 @@ echo export LANGUAGE="en_US.UTF-8" >> .bashrc
 
 # Install some necessities before restarting
 echo 'Installing git, python3-pip and subversion...'
-sudo apt-get install --upgrade git
-sudo apt-get install python3-pip
-sudo apt-get install --upgrade subversion
+sudo apt-get install --upgrade -y git
+sudo apt-get install --upgrade -y python3-pip
+sudo apt-get install --upgrade -y subversion
 echo 'Done.'
 
 # Allow Jetson to be remotely accessible by issuing following command
-echo 'Note: The following command requires to be run on the local machine without the use of ssh: gsettings set org.gnome.Vino require-encryption false'
+echo 'Note: The following command requires to be run on the local machine without the use of ssh: gsettings set org.gnome.Vino require-encryption false.'
 echo 'Running gsettings set org.gnome.Vino require-encryption false...'
 # Actual command
 gsettings set org.gnome.Vino require-encryption false
