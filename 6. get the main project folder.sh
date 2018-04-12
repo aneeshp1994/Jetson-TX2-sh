@@ -14,3 +14,4 @@ chgrp -R frs logs
 cd $HOME/work/NICODORA/trunk/src/backend
 ln -snf enroll_2000-01-01-00-00-00 enroll
 echo 'Done.'
+echo 'Finished.'

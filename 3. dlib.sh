@@ -36,3 +36,4 @@ cd dlib
 echo 'Installing dlib for python...'
 sudo python3 setup.py install --yes USE_AVX_INSTRUCTIONS --yes DLIB_USE_CUDA
 echo 'Done.'
+echo 'Finished.'

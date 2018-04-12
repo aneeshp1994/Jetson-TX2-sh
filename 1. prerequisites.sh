@@ -35,3 +35,4 @@ echo 'Done.'
 
 # Tell user that the system will restart to let the changes take effect
 echo 'Restart the system for the changes to take effect.'
+echo 'Finished.'

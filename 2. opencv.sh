@@ -105,3 +105,4 @@ echo 'Done.'
 echo 'Installing opencv...'
 sudo make install
 echo 'Done.'
+echo 'Finished.'

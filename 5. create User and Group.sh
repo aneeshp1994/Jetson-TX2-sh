@@ -14,3 +14,4 @@ echo 'Done.'
 echo 'Make sure that the group frs has all the users...'
 grep frs /etc/group
 echo 'Done.'
+echo 'Finished.'
