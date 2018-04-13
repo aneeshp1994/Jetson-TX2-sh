@@ -1,6 +1,6 @@
 import cv2
 
-cam = cv2.VideoCapture('http://10.1.20.213/')
+cam = cv2.VideoCapture('http://10.1.20.213/video')
 while True:
     _, frame = cam.read()
 
