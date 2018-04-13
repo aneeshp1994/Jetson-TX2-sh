@@ -102,7 +102,4 @@ if __name__ == "__main__":
     cv2.namedWindow("test", 0)
     for img_array in get_cv_img_from_ip_cam():
         cv2.imshow("test", img_array)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            cv2.destroyAllWindows()
-            cap.release()
-            break
+        cv2.waitKey(1)
