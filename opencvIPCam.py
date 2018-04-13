@@ -1,6 +1,6 @@
 import cv2
 
-cam = cv2.VideoCapture('http://10.1.20.213/video')
+cam = cv2.VideoCapture('http://10.1.20.213/live.asp.mjpeg')
 while True:
     _, frame = cam.read()
 
