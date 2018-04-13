@@ -4,7 +4,7 @@ import numpy as np
 from io import StringIO
 
 META_DATA_LENGTH = 110
-IP_ADDRESS = "10.10.100.100"
+IP_ADDRESS = "10.1.20.213"
 PORT = 80
 
 # authentication requirements have been removed from the camera
