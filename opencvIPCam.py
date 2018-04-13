@@ -1,7 +1,7 @@
 import requests
 import cv2
 import numpy as np
-from StringIO import StringIO
+from io import StringIO
 
 META_DATA_LENGTH = 110
 IP_ADDRESS = "10.10.100.100"
