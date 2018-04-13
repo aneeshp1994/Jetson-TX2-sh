@@ -26,7 +26,7 @@ def image_yielder(response_stream):
     for line in response_stream.iter_content(chunk_size=2048, decode_unicode=False):
         if current_state == StreamState.SEEKING_META_DATA:
             meta_data_seeker.write(str(line))
-            if meta_data_seeker.len >= META_DATA_LENGTH:
+            if meta_data_seeker.tell() >= META_DATA_LENGTH:
                 string_to_examine = meta_data_seeker.getvalue()
                 if "Content-length" in string_to_examine:
                     starting_index = string_to_examine.index("Content-length")
