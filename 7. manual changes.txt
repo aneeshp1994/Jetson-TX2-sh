@@ -53,6 +53,6 @@
         elseif(CUDA_GENERATION STREQUAL "Maxwell")
           set(__cuda_arch_bin "5.0 5.2")
 
-04. Open the file opencv-3.3.0\modules\cudev\include\opencv2\cudev\common.hpp and add the line:
+04. Open the file opencv\modules\cudev\include\opencv2\cudev\common.hpp and add the line:
     #include <cuda_fp16.h>
     in the header.
