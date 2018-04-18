@@ -6,4 +6,4 @@ Some .sh files to setup a fresh TX2.
 Download: https://developer.nvidia.com/embedded/jetpack
 Installation Guide: http://docs.nvidia.com/jetpack-tk1/1_1/content/developertools/mobile/jetpack_install.htm
 
-2. To install opencv with cuda, you must make sure the version of Jetpack that you installed. If you installed Jetpack 3.1, please run '2. opencv cuda_8.0.sh'. If you have installed Jetpack 3.2, please run '2. opencv cuda_9.0.sh'.
+2. To install opencv with cuda, you must make sure the version of Jetpack that you installed. If you installed Jetpack 3.1, please run '2. opencv cuda_8.0.sh'. If you have installed Jetpack 3.2, please run '2. opencv cuda_9.0.sh'. If have Jetpack 3.2, please make sure to perform the changes mentioned in the txt file "7. manual changes.txt".
