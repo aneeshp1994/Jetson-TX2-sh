@@ -1,0 +1,56 @@
+01. Go to opencv/cmake and open FindCUDA.cmake
+    (1) Look for the line:
+        find_cuda_helper_libs(nppi) and replace it with the following:
+
+            find_cuda_helper_libs(nppial)
+            find_cuda_helper_libs(nppicc)
+            find_cuda_helper_libs(nppicom)
+            find_cuda_helper_libs(nppidei)
+            find_cuda_helper_libs(nppif)
+            find_cuda_helper_libs(nppig)
+            find_cuda_helper_libs(nppim)
+            find_cuda_helper_libs(nppist)
+            find_cuda_helper_libs(nppisu)
+            find_cuda_helper_libs(nppitc)
+
+    (2) Locate the line: 
+        set(CUDA_npp_LIBRARY "${CUDA_nppc_LIBRARY};${CUDA_nppi_LIBRARY};${CUDA_npps_LIBRARY}") and change it to:
+            
+            set(CUDA_npp_LIBRARY "${CUDA_nppc_LIBRARY};${CUDA_nppial_LIBRARY};${CUDA_nppicc_LIBRARY};${CUDA_nppicom_LIBRARY};${CUDA_nppidei_LIBRARY};${CUDA_nppif_LIBRARY};${CUDA_nppig_LIBRARY};${CUDA_nppim_LIBRARY};${CUDA_nppist_LIBRARY};${CUDA_nppisu_LIBRARY};${CUDA_nppitc_LIBRARY};${CUDA_npps_LIBRARY}")
+    
+    (3) Find the line:
+        unset(CUDA_nppi_LIBRARY CACHE) and change it to:
+        
+            unset(CUDA_nppial_LIBRARY CACHE)
+            unset(CUDA_nppicc_LIBRARY CACHE)
+            unset(CUDA_nppicom_LIBRARY CACHE)
+            unset(CUDA_nppidei_LIBRARY CACHE)
+            unset(CUDA_nppif_LIBRARY CACHE)
+            unset(CUDA_nppig_LIBRARY CACHE)
+            unset(CUDA_nppim_LIBRARY CACHE)
+            unset(CUDA_nppist_LIBRARY CACHE)
+            unset(CUDA_nppisu_LIBRARY CACHE)
+            unset(CUDA_nppitc_LIBRARY CACHE)
+
+
+02. Open the file OpenCVDetectCuda.cmake
+    (1) Locate:
+
+        set(__cuda_arch_ptx "")
+        if(CUDA_GENERATION STREQUAL "Fermi")
+          set(__cuda_arch_bin "2.0")
+        elseif(CUDA_GENERATION STREQUAL "Kepler")
+          set(__cuda_arch_bin "3.0 3.5 3.7")
+
+        and remove the line with "2.0" in it and the line immediately after so it looks like:
+        
+        set(__cuda_arch_ptx "")
+        if(CUDA_GENERATION STREQUAL "Kepler")
+          set(__cuda_arch_bin "3.0 3.5 3.7")
+        elseif(CUDA_GENERATION STREQUAL "Maxwell")
+          set(__cuda_arch_bin "5.0 5.2")
+
+
+03. Open the file opencv\modules\cudev\include\opencv2\cudev\common.hpp and add the line:
+    #include <cuda_fp16.h>
+    in the header.
