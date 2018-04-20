@@ -4,3 +4,22 @@
 
 02. open /backend/utils/databaseEntry.py:
     check the username and password in the dbConnectorConnect() and change it to appropriate value.
+
+
+03. To set www-data as a sudoer for running .py files via php:
+    (1) Open a terminal and go to /etc. Open the file /etc/sudoers by typing "sudo gedit /etc/sudoers" on the command line.
+    (2) Go to the end of the file and add the following line:
+        www-data ALL:NOPASS ALL
+    (3) Save the file and exit.
+
+
+04. Change permissions of folders:
+    (1) chmod -R 777 backend/dataset
+    (2) chmod -R 777 backend/logs
+    (3) chmod -R 777 webroot/dataset
+
+
+05. Change permission of files:
+    (1) chmod 777 backend/recognize_webcam.py
+    (2) chmod 777 backend/clustering.py
+    (3) chmod 777 backend/enroll.py
