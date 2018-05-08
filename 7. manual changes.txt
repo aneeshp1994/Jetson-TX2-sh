@@ -13,18 +13,7 @@
     (3) Save the file and exit.
 
 
-04. Change permissions of folders (optional):
-    (1) chmod -R 777 backend/dataset
-    (2) chmod -R 777 backend/logs
-    (3) chmod -R 777 webroot/dataset
-
-
-05. Change permission of files (optional):
-    (1) chmod 777 backend/recognize_webcam.py
-    (2) chmod 777 backend/clustering.py
-    (3) chmod 777 backend/enroll.py
-
-06. Set post_max_size to allow posting a large amount of data via php:
+04. Set post_max_size to allow posting a large amount of data via php:
     (1) Open /etc/php/5.6/apache2/php.ini
     NOTE: Remove comments if present
     (2) Set post_max_size = 8M (or 16M)
@@ -32,3 +21,19 @@
     (4) Restart apache by typing:
         sudo systemctl restart apache2
         and putting in password.
+
+05. apache settings:
+    (1) Go to /etc/apache2/sites-enabled. Create a copy of the original .conf file. Name it nicodora.conf (optional)
+    (2) Add following lines to it, in between <VirtualHost *80> and </VirtualHost>:
+        ServerName frs
+        Alias /frs "/home/$USER/work/NICODORA/trunk/src/webroot/"
+        ServerAdmin webmaster@localhost
+        DocumentRoot /home/$USER/work/NICODORA/trunk/src/webroot/
+        
+        ErrorLog $(APACHE_LOG_DIR)/error.log (or anything you would like after the '/')
+        CustomLog $(APACHE_LOG_DIR)/acces.log combined
+        <Directory /home/$USER/work/NICODORA/trunk/src/webroot>
+        AllowOverride none
+        Require all granted
+        </Directory>
+        
