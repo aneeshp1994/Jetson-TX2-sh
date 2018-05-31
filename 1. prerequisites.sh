@@ -10,6 +10,8 @@ echo 'Done.'
 # Install mlocate to use the command locate
 echo 'Installing mlocate...'
 sudo apt-get install --upgrade -y mlocate
+sudo updatedb
+echo "Installation completed."
 
 # Add aliases to pip3.5 and python3.5
 echo alias pip=\”sudo -H pip3\” >> .bashrc
