@@ -5,6 +5,7 @@ sudo nvpmodel -m 0
 
 echo 'Performing update and upgrade to get all softwares up to date...'
 sudo apt-get update && sudo apt-get upgrade
+sudo apt-get autoremove -y
 echo 'Done.'
 
 # Install mlocate to use the command locate
