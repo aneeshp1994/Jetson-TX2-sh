@@ -34,9 +34,9 @@ sudo apt-get install --upgrade -y \
     cmake \
     python3-dev \
     python3-py \
-    python3-pytest
+    python3-pytest \
     libgstreamer1.0-dev \
-    libgstreamer-plugins-base1.0-dev
+    libgstreamer-plugins-base1.0-dev \
     pkg-config
 echo 'Done.'
 
