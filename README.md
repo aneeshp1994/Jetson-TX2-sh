@@ -15,4 +15,5 @@ Jetson TX2
 
 ### Software
 Jetpack 3.2
+
 Jetpack 3.3
