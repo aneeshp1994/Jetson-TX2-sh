@@ -47,9 +47,9 @@ mkdir work
 cd work
 
 # Clone the git repository of opencv and opencv-contrib
-echo 'Cloning the opencv and opencv_contrib from git...'
-git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
+echo 'Cloning the opencv (3.3.0) and opencv_contrib (3.3.0) from git...'
+git clone https://github.com/aneeshp1994/opencv.git
+git clone https://github.com/aneeshp1994/opencv_contrib.git
 echo 'Done.'
 
 #sudo apt-get install --upgrade -y python3-dev python3-py python3-pytest
@@ -104,5 +104,7 @@ echo 'Done.'
 
 echo 'Installing opencv...'
 sudo make install
+
+sudo -H pip3 install --upgrade opencv-python
 echo 'Done.'
 echo 'Finished.'
