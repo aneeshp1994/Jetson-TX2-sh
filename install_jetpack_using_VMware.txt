@@ -1,0 +1,42 @@
+To configure the Ubuntu VM so it can access the Ethernet interface and the Jetson TX2 USB interface.
+
+1. **Important**
+Setup the Jetson TX2 is Force Recovery Mode *now* and leave it like that - you need to do this so that it appears in the Virtual Machine USB settings
+
+2. Disk Space
+The Ubuntu VM needs enough disk space so set this to 64GB when you create it - 25GB was not enough
+
+3. Under the VM Settings:
+** Do this BEFORE you start the VM **
+
+	Network -> Enable Network Adapter; Bridged Adapter, en0: Ethernet
+
+	Ports -> USB -> Enable USB Controller; USB 3.0 (xHCI) Controller ... and then
+
+	In the USB Device Filters section, add a new filter by clicking the 'plus' icon on the right
+	You should see NVIDIA Corp. APX [0102] - add that
+	If you don't see it, try resetting the Jetson TX2 into Force Recovery Mode again
+	If the Enable USB Controller text is greyed out then your VM might already be running. Shut it down and try again
+
+4. run 'ifconfig'
+	You should see an IP address on your network under the Ethernet interface
+	This will have a different name on the VM - in my case it was enp0s3 instead of en0 but the IP address was in the correct range
+
+5. run 'lsusb'
+	You should see the NVIDIA device in the list:
+	Bus 001 Device 003: ID 0955:7721 NVidia Corp.
+
+6. If both of those are correct then you can move on to installing JetPack
+
+	I just followed these instructions from NVidia:
+
+	https://developer.nvidia.com/embedded/dlc/jetpack-l4t-3_3
+
+7. (Important) When a window pops up asking you to put the TX2 into Forced Recovery Mode, then just hit Return - you've already done this
+
+8 .This all takes a while - there are a lot of moving parts - but if all goes well it will complete and boot up a new Ubuntu desktop on the TX2
+Note that the new session is under user 'nvidia' - the default password is 'nvidia'
+
+9 .If it all works then go to the TX2 and cd to:
+	~./NVIDIA_CUDA-8.0_Samples/bin/aarch64/linux/release/smokeParticles
+
