@@ -14,8 +14,8 @@ sudo updatedb
 echo "Installation completed."
 
 # Add aliases to pip3.5 and python3.5
-echo alias pip=\”sudo -H pip3\” >> .bashrc
-echo alias python=\”python3\” >> .bashrc
+echo alias pip=\"sudo -H pip3\" >> .bashrc
+echo alias python=\"python3\" >> .bashrc
 
 # Add some exports to set up locale
 echo export LC_ALL="en_US.UTF-8" >> .bashrc
