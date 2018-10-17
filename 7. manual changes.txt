@@ -37,7 +37,7 @@ then,
 
 05. apache settings:
     (1) Go to /etc/apache2/sites-available. Create a copy of the file 000-default.conf. Name it nicodora.conf (optional)
-    (2) Open with sudo priviledges and add following lines to it, in between <VirtualHost *80> and </VirtualHost>:
+    (2) Open the newly created file with sudo priviledges and add following lines to it, in between <VirtualHost *80> and </VirtualHost>:
         ServerName frs
         Alias /frs "/home/$USER/work/NICODORA/trunk/src/webroot/"
         ServerAdmin webmaster@localhost
