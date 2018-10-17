@@ -14,7 +14,7 @@
 
 
 04. Set post_max_size to allow posting a large amount of data via php:
-    (1) Open /etc/php/5.6/apache2/php.ini
+    (1) Open with sudo priviledges the file /etc/php/5.6/apache2/php.ini
     NOTE: Remove comments if present
     (2) Set post_max_size = 8M (or 16M)
     (3) Set max_input_vars = 5000 (or greater)
@@ -24,7 +24,7 @@
 
 05. apache settings:
     (1) Go to /etc/apache2/sites-enabled. Create a copy of the original .conf file. Name it nicodora.conf (optional)
-    (2) Add following lines to it, in between <VirtualHost *80> and </VirtualHost>:
+    (2) Open with sudo priviledges and add following lines to it, in between <VirtualHost *80> and </VirtualHost>:
         ServerName frs
         Alias /frs "/home/$USER/work/NICODORA/trunk/src/webroot/"
         ServerAdmin webmaster@localhost
