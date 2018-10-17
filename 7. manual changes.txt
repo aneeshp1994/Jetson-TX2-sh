@@ -13,6 +13,19 @@
     (3) Save the file and exit.
 
 
+###############################################################################
+NOTE: If something fails, e.g. if something like this appears on terminal:
+
+sudo: >>> /etc/sudoers: syntax error near line 25 <<<
+sudo: parse error in /etc/sudoers near line 25
+sudo: no valid sudoers sources found, quitting
+sudo: unable to initialize policy plugin
+
+then,
+(1) Open a terminal, and type "pkexec visudo". Hit enter.
+###############################################################################
+
+
 04. Set post_max_size to allow posting a large amount of data via php:
     (1) Open with sudo priviledges the file /etc/php/5.6/apache2/php.ini
     NOTE: Remove comments if present
