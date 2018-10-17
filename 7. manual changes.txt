@@ -36,17 +36,16 @@ then,
         and putting in password.
 
 05. apache settings:
-    (1) Go to /etc/apache2/sites-enabled. Create a copy of the original .conf file. Name it nicodora.conf (optional)
+    (1) Go to /etc/apache2/sites-available. Create a copy of the file 000-default.conf. Name it nicodora.conf (optional)
     (2) Open with sudo priviledges and add following lines to it, in between <VirtualHost *80> and </VirtualHost>:
         ServerName frs
         Alias /frs "/home/$USER/work/NICODORA/trunk/src/webroot/"
         ServerAdmin webmaster@localhost
         DocumentRoot /home/$USER/work/NICODORA/trunk/src/webroot/
         
-        ErrorLog $(APACHE_LOG_DIR)/error.log (or anything you would like after the '/')
+        ErrorLog $(APACHE_LOG_DIR)/error.log
         CustomLog $(APACHE_LOG_DIR)/acces.log combined
         <Directory /home/$USER/work/NICODORA/trunk/src/webroot>
-        AllowOverride none
-        Require all granted
+                AllowOverride none
+                Require all granted
         </Directory>
-        
