@@ -16,10 +16,12 @@ echo 'Done.'
 
 # Install php
 echo 'Installing php5.6 from ppa:ondrej/php repository...'
-sudo add-apt-repository ppa:ondrej/php
+#sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
-sudo apt-get install --upgrade -y php5.6
-sudo apt-get install --upgrade -y php5.6-mysqli
+#sudo apt-get install --upgrade -y php5.6
+#sudo apt-get install --upgrade -y php5.6-mysqli
+sudo apt-get install --upgrade -y php
+sudo apt-get install --upgrade -y php-mysql
 echo 'Done.'
 
 # To prevent "Group by non aggregated columns allowed" error
