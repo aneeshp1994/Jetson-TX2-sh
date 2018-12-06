@@ -20,7 +20,7 @@ sudo apt-get install --upgrade -y --fix-missing \
     python3-dev \
     python3-numpy \
     software-properties-common \
-    zip \
+    zip
 echo 'Done.'
 
 cd $HOME/work
