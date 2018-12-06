@@ -36,6 +36,6 @@ echo 'Running gsettings set org.gnome.Vino require-encryption false...'
 gsettings set org.gnome.Vino require-encryption false
 echo 'Done.'
 
-# Tell user that the system will restart to let the changes take effect
-echo 'Restart the system for the changes to take effect.'
+# Re-run .bashrc to make the changes take effect
+source $HOME/.bashrc
 echo 'Finished.'
